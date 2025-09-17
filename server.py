@@ -3,6 +3,7 @@ from socket import *
 myIp = '127.0.0.1'
 myPort = 8888
 myAddr = (myIp, myPort)
+returnmsg = "Your message has been received!"
 
 # create a socket to listen
 serverSocket = socket(AF_INET, SOCK_DGRAM)
@@ -19,9 +20,11 @@ while(True):
     decoded = received.decode()
     print(decoded)
 
-    if decoded == 'exit':
-        break
-
     # Return a message to the client
         # message and the client address
         # hint: use the sendto() method
+    serverSocket.sendto(returnmsg.encode(), clientAddr) # sends the returnmsg encoded back to the client address
+
+    # if the server receives "exit", then break the loop
+    if decoded == 'exit':
+        break
