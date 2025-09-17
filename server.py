@@ -21,3 +21,7 @@ while(True):
 
     if decoded == 'exit':
         break
+
+    # Return a message to the client
+        # message and the client address
+        # hint: use the sendto() method
