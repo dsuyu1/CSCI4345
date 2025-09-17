@@ -12,7 +12,7 @@ serverAddr = (serverIP, serverPort)
 
 
 # 1. Take in a message to send
-msg = "This is the client speaking!"
+msg = input('Please enter a message to send: ')
 
 # 2. Encode the message (prepare the message for transfer)
 encoded = msg.encode()

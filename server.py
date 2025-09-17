@@ -10,10 +10,14 @@ serverSocket = socket(AF_INET, SOCK_DGRAM)
 # bind this socket to a port
 serverSocket.bind(myAddr)
 
-print(serverSocket)
-
+# keep receiving 
+while(True):
 # receive some message
-received = serverSocket.recvfrom(2048)
+    received, clientAddr = serverSocket.recvfrom(2048)
 
-# display the message we received
-print(received)
+# decode and display the message we received
+    decoded = received.decode()
+    print(decoded)
+
+    if decoded == 'exit':
+        break
