@@ -2,8 +2,8 @@ from socket import *
 
 # Pre-requisites
     # we need some info
-serverIP = '127.0.0.1'
-serverPort = 8888
+serverIP = '192.168.1.2'
+serverPort = 5050
 serverAddr = (serverIP, serverPort)
 
 # my own information (not required)
